@@ -1,3 +1,7 @@
+// Christian Garcia, Jackson Jones
+// CS 412 Lab 7
+// November 17th, 2016
+
 package src;
 
 import java.rmi.registry.Registry;
@@ -9,7 +13,25 @@ public class MatrixAdditionServer implements MatrixAddition {
         
     public MatrixAdditionServer() {}
 
-    public int[][] addMatrices(int[][] a, int[][] b) throws RemoteException {
+    int[][] a;
+    int[][] b;
+    
+	@Override
+	public int[][] getMatrixA(int[][] a) throws RemoteException {
+		this.a = a;
+		
+		return a;
+	}
+
+	@Override
+	public int[][] getMatrixB(int[][] b) throws RemoteException {
+		this.b = b;
+		
+		return b;
+	}
+    
+    // Takes in two two-dimensional matrices (arrays) from the client and adds them
+    public int[][] addMatrices() throws RemoteException {
     	
         int[][] sum = new int[a.length][a[0].length];
         
