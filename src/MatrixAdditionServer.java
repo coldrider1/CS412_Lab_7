@@ -1,3 +1,5 @@
+package src;
+
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
@@ -20,7 +22,7 @@ public class MatrixAdditionServer implements MatrixAddition {
             MatrixAddition stub = (MatrixAddition) UnicastRemoteObject.exportObject(obj, 0);
 
             // Bind the remote object's stub in the registry
-            Registry registry = LocateRegistry.createRegistry((int) Math.random());
+            Registry registry = LocateRegistry.createRegistry(2000);
             registry.bind("MatrixAddition", stub);
 
             System.err.println("Server ready");
