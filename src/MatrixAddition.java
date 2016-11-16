@@ -5,5 +5,5 @@ import java.rmi.RemoteException;
 
 public interface MatrixAddition extends Remote {
 	
-    int[] addMatrices(int[] a, int[] b) throws RemoteException;
+    int[][] addMatrices(int[][] a, int[][] b) throws RemoteException;
 }
